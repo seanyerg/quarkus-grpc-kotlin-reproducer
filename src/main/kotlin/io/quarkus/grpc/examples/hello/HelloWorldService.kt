@@ -13,7 +13,7 @@ class HelloWorldService : Greeter {
     override fun sayHello(request: HelloRequest): Uni<HelloReply> {
         val count = counter.incrementAndGet()
         val name = request.name
-        return Uni.createFrom().item("Hi $name")
+        return Uni.createFrom().item("Hello $name")
             .map { res: String? -> HelloReply.newBuilder().setMessage(res).setCount(count).build() }
     }
 }
